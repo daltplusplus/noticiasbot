@@ -1,0 +1,5 @@
+# Ignorar cualquier __pycache__ en cualquier lugar
+**/__pycache__/
+mi_base
+mi_base.db
+.env
