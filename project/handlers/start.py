@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import CommandHandler, ContextTypes
-from project.news.newsRepository import NewsRepository
+from project.news.newsService import NewsService
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -9,8 +9,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message += "\n/now - las ultimas noticias de hoy"
 
 async def now(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    repo = NewsRepository()
-    news = repo.getLast(3)
+    newsService = NewsService()
+    news = newsService.getLast(3)
 
     for n in news:
         message = ""
@@ -31,4 +31,5 @@ def escape_markdown_v2(text: str) -> str:
     escape_chars = r'_[]()~`>#+-=|{}.!'
     return ''.join('\\' + c if c in escape_chars else c for c in text)
 
-handler = CommandHandler("now", now)
+handlerNow = CommandHandler("now", now)
+handlerStart = CommandHandler("start", start)

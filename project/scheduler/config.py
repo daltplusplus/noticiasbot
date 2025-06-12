@@ -7,10 +7,11 @@ def init_scheduler():
 
     scheduler.add_job(
         save_last_news,
-        IntervalTrigger(minutes=10),
+        IntervalTrigger(minutes=8),
         name="save last news"
     )
 
     scheduler.start()
     print("Scheduler iniciado.")
+    save_last_news()
     return scheduler

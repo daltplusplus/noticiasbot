@@ -2,3 +2,5 @@ python-dotenv
 python-telegram-bot
 SQLAlchemy
 APScheduler
+requests
+spacy

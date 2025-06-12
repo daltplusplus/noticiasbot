@@ -12,7 +12,8 @@ def main():
     scheduler = init_scheduler()
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
-    app.add_handler(start.handler)
+    app.add_handler(start.handlerNow)
+    app.add_handler(start.handlerStart)
 
     app.run_polling()
 
