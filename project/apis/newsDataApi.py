@@ -33,9 +33,6 @@ def cant_append(link):
     counts = 0
     for n in no_appendable:
         counts += link.count(n)
-
-    if counts:
-        print(link)
     
     return counts
         
