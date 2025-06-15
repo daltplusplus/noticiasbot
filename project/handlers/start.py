@@ -33,7 +33,7 @@ async def top(update: Update, context: ContextTypes.DEFAULT_TYPE):
     top = words[:5]
     message = "<b>🔥 Temas más mencionados hoy:</b>\n"
     for wd, ts in top:
-        message += f"•{wd}, {ts} menciones\n"
+        message += f"🔹{wd} ({ts} menciones)\n"
         
     await update.message.reply_text(message, parse_mode='HTML')
     
