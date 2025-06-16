@@ -23,6 +23,7 @@ def main():
     app.add_handler(start.handlerNow)
     app.add_handler(start.handlerStart)
     app.add_handler(start.handlerTop)
+    app.add_handler(start.handlerSearch)
 
     app.run_polling()
 

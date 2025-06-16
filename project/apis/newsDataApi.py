@@ -1,8 +1,10 @@
 import requests
 from project.news.new import New
-from datetime import datetime, timezone
+from datetime import datetime
+import pytz
 
-no_appendable= ["/colombia/", "/mexico/", "/espana/", ".es"]
+no_appendable= ["/colombia/", "/mexico/", "/espana/", ".es", "/peru/"]
+timezone_ar = pytz.timezone("America/Argentina/Buenos_Aires")
 
 def getNews():
     # Llamar a una API que devuelve una imagen por URL
@@ -20,7 +22,7 @@ def getNews():
                 new.source_name = article["source_name"]
                 new.image_url = article["image_url"]
                 new.description = article["description"]
-                new.time = datetime.now()
+                new.time = datetime.now(timezone_ar)
 
                 news.append(new)
                 

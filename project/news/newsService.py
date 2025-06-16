@@ -24,3 +24,6 @@ class NewsService:
 
     def getLast(self, amount):
         return self.repo.getLast(amount)
+    
+    def getByWord(self, word):
+        return self.repo.getByWord(word)

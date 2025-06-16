@@ -43,5 +43,5 @@ def save_last_news():
         freq = Counter(phrases)
 
         for phrase in freq:
-            word = KeyWord(phrase, datetime.now())
+            word = KeyWord(phrase, n.time)
             keywordService.save(word)

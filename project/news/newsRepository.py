@@ -18,7 +18,6 @@ class NewsRepository:
         return self.session.query(New).filter(New.id == id).first()
 
     def refresh(self, new: New):
-        # Por simplicidad, asumiendo new ya está enlazada a sesión
         self.session.commit()
 
     def remove(self, new: New):
@@ -27,3 +26,6 @@ class NewsRepository:
 
     def getLast(self, amount):
         return self.session.query(New).order_by(desc(New.time)).limit(amount).all()
+    
+    def getByWord(self, word):
+        return self.session.query(New).filter(New.title.like(f"%{word}%")).order_by(desc(New.time)).limit(5).all()
