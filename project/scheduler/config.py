@@ -14,7 +14,7 @@ def init_scheduler():
     scheduler.add_job(update_job, IntervalTrigger(minutes=70))
     update_job()
     scheduler.start()
-    ##save_last_news()
+    save_last_news()
     
     
 def update_job():

@@ -11,7 +11,7 @@ timezone_ar = pytz.timezone("America/Argentina/Buenos_Aires")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message = "Hola! soy canillita. Puedo ayudarte a ver las noticias y tendencias del dia\n"
-    message += "\nPodes controlarme con los estos comandos:\n"
+    message += "\nPodes controlarme con estos comandos:\n"
     message += "\n/ultimo - las ultimas noticias"
     message += "\n/top - temas mas mencionados hoy hasta ahora"
     message += "\n/buscar [palabra] - ultimas noticias que contenga dicha palabra"
